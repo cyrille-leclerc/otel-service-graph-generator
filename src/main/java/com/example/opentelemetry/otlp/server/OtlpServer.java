@@ -23,9 +23,9 @@ public class OtlpServer {
     private Server server;
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        AutoConfiguredOpenTelemetrySdkBuilder autoConfiguredOpenTelemetrySdkBuilder = AutoConfiguredOpenTelemetrySdk.builder();
 
-        autoConfiguredOpenTelemetrySdkBuilder
+        AutoConfiguredOpenTelemetrySdk
+                .builder()
                 .addResourceCustomizer((resource, configProperties) -> Resource.builder().put(ResourceAttributes.SERVICE_NAME, "service-graph-generator").build())
                 .setResultAsGlobal()
                 .build();
